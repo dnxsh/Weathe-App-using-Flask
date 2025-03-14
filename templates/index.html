@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image:url("static/sky_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: hue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 730px;
+}
+.container{
+    padding-top: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+}
+.container h1{
+    color: rgb(74, 195, 243);
+    font-size: 37px;
+    padding: 10px;
+}
+.container input{
+    width: 300px;
+    font-size: 22px;
+    outline: 0;
+    text-align: center;
+    border-radius: 7px;
+    border-color: rgb(74, 195, 243);
+    border-style: groove;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+.container button{
+    width: 100px;
+    height: 35px;
+    border: 0;
+    outline: 0;
+    background: rgb(74, 195, 243);
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container img{
+    width: 100px;
+    margin-top: 20px;
+}
+.container h2{
+    font-size: 40px;
+}
+.container h3{
+    font-size: 25px;
+}
+.bottom img{
+    width: 45%;
+    padding-right: 50px;
+    padding-left: 40px;
+}
+.bottom h3{
+    font-size: 30px;
+    display: inline;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.bottom{
+    padding-bottom: 30px;
+}
+.city h3{
+    padding-top: 20px;
+    font-size: 30px;
+}
+.data{
+    display: flex;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <form action="/" method="POST">
+            <div><input type="text" class='form-control' name='City' id="City" placeholder="Enter City Name" required></div>
+            <div><button type="submit" class="btn btn-primary">Get Weather</button></div>
+        </form>
+        <div class="city">
+            <div><h3>{{city}}</h3></div>
+            <img src="https://openweathermap.org/img/wn/{{icon}}.png" alt="Logo1">
+        </div>
+        <div><h2>{{temp}}</h2></div>
+        <div><h3>{{desc}}</h3></div>
+        <div class="bottom">
+            <div class="img">
+                <img src="static/humidity.png" alt="Logo2">
+                <img src="static/wind.png" alt="Logo2">
+            </div>
+            <div class="data" >
+                <h3 style="float: left;">{{hum}}</h3>
+                <h3 style="float: right;">{{wind}}</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
