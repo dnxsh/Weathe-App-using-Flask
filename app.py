@@ -8,8 +8,8 @@ def index():
         city_name=request.form['City']
         url = f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={your_api_id}&units=metric'
         response=requests.get(url).json()
-        city= city_name
-        temp= str(response['main']['temp'])+'°C'
+        city= city_name.capitalize()
+        temp= str(int(response['main']['temp']))+'°C'
         desc= response['weather'][0]['description'].capitalize()
         hum= str(response['main']['humidity'])+'%'
         wind= str(response['wind']['speed'])+'m/s'
