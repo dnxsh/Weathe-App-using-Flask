@@ -6,7 +6,7 @@ app=Flask(__name__)
 def index():
     if request.method=='POST':
         city_name=request.form['City']
-        url = f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid=39a788a382724ea022a6df21e3534a6b&units=metric'
+        url = f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={your_api_id}&units=metric'
         response=requests.get(url).json()
         city= city_name
         temp= str(response['main']['temp'])+'°C'
